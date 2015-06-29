@@ -24,6 +24,19 @@ if [ ! -d $CODEDIR ]; then
 	exit 1
 fi
 
+
+PACKAGEDIR=packages
+
+if [ ! -d $PACKAGEDIR ]; then
+        echo "INFO: Directory $PACKAGEDIR does not exist - creating it..."
+        mkdir $PACKAGEDIR
+        if [ $? -ne 0 ]; then
+                echo "ERROR: Failed to create directory $PACKAGEDIR - aborting"
+                exit 1
+        fi
+fi
+
+
 dat=`date +%Y_%m_%d_%H_%M_%S`
 
 WORKDIR=revsw-rum'_'$VERSION'_'$dat 
@@ -69,5 +82,5 @@ mkdir -p $foldername/opt/$PackageName/log
 
 sudo chown -R root:root $foldername/opt/$PackageName
 
-dpkg -b $foldername $foldername.deb
+dpkg -b $foldername $WORKSPACE/$PACKAGEDIR/$foldername.deb
 
