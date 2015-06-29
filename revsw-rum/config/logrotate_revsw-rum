@@ -1,0 +1,9 @@
+/opt/revsw-rum/log/rum.log {
+  rotate 15
+  daily
+  compress
+  missingok
+  notifempty
+  dateext
+  copytruncate
+}
