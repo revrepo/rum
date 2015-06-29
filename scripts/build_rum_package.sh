@@ -68,15 +68,15 @@ mkdir -p $foldername/etc/init.d  $foldername/etc/logrotate.d
 cp -rp $WORKSPACE/scripts/revsw-rum  $foldername/etc/init.d/revsw-rum
 
 cp -rp $WORKSPACE/revsw-rum/config/logrotate_revsw-rum $foldername/etc/logrotate.d/revsw-rum
-cp -rp $WORKSPACE/revsw-rum/config/config.js.def $foldername/etc/logrotate.d/revsw-rum
 
 
-mkdir -p $foldername/opt/$PackageName 
+mkdir -p $foldername/opt/$PackageName/config
 
 cp -rf  $WORKSPACE/revsw-rum/node_modules  $foldername/opt/$PackageName/
 cp -rf  $WORKSPACE/revsw-rum/collector_bridge.js  $foldername/opt/$PackageName/
 cp -rf  $WORKSPACE/revsw-rum/server.js  $foldername/opt/$PackageName/
 cp -rf  $WORKSPACE/revsw-rum/package.json  $foldername/opt/$PackageName/
+cp -rp $WORKSPACE/revsw-rum/config/config.js.def $foldername/opt/$PackageName/config/
 
 mkdir -p $foldername/opt/$PackageName/log
 
