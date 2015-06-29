@@ -80,7 +80,8 @@ cp -rp $WORKSPACE/revsw-rum/config/config.js.def $foldername/opt/$PackageName/co
 
 mkdir -p $foldername/opt/$PackageName/log
 
-sudo chown -R root:root $foldername/opt/$PackageName
+sudo chown -R root:root $foldername/opt
+sudo chown -R root:root $foldername/etc
 
 dpkg -b $foldername $WORKSPACE/$PACKAGEDIR/$foldername.deb
 
