@@ -41,7 +41,7 @@ var logger = new winston.Logger({
 
 var delogger = new (winston.Logger)({ transports: [
     new (winston.transports.File)({ 
-        filename: "../log/rum.log", 
+        filename: "./log/rum.log", 
 		level:"debug",
         colorize: true ,
 		facility: "user",
