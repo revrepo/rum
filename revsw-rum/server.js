@@ -288,7 +288,7 @@ var cubeSend = function(object, client) {
   }
 
   // Don't send to Cube www.metacafe.com RUM reports
-  if ( object.data.domain === 'www.metacafe.com' )
+  if ( object.data.domain === 'www.metacafe.com' ) {
     revlogger.log('debug', 'Dropping www.metacafe.com request');
     return;
   }
