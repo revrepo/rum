@@ -1,8 +1,8 @@
 module.exports = {
         service: {
                 url: "0.0.0.0",
-                https_port:443,
-                http_port:80,
+                https_port:444,
+                http_port:81,
                 nonce_validate_time:100,
                 nonce: false
         },
@@ -11,13 +11,17 @@ module.exports = {
         is_https: true,
         process_res_timing: true,
         request_uuid: true,
-        winston_syslog_level:"warn",
-        key_path : '/opt/revsw-rum/config/ssl_certs/server.key',
-        cert_path : '/opt/revsw-rum/config/ssl_certs/server.crt',
-        ca_path : '/opt/revsw-rum/config/ssl_certs/ca_chain.crt',
+        key_path : './config/ssl_certs/server.key',
+        cert_path : './config/ssl_certs/server.crt',
+        ca_path : './config/ssl_certs/ca_chain.crt',
         cube:[{
-                protocol:"ws",domain:"TESTSJC20-CUBE01.REVSW.NET",port:"1080", client : null
-        }]
+                protocol:"ws",domain:"localhost",port:"1080", client : null
+        }],
+
+	logging: {
+                syslog_level:"debug", // allowed levels debug, info, notice, warning, error, crit, alert, emerg
+                debug_log_file_path:"./log/rum.log"
+        }
 };
 
 

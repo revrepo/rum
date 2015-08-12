@@ -286,6 +286,13 @@ var cubeSend = function(object, client) {
   if (longitude && longitude != undefined) {
     object.data.longitude = longitude;
   }
+
+  // Don't send to Cube www.metacafe.com RUM reports
+  if ( object.data.domain === 'www.metacafe.com' )
+    revlogger.log('debug', 'Dropping www.metacafe.com request');
+    return;
+  }
+
   revlogger.log('debug', "obj----to cube-->" + object);
   revlogger.log("info", "Sending object to CUBE for domain " +  object.data.domain + ', user IP ' + object.data.user_ip);
   client.send(object);
